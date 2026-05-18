@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishnavi Portfolio</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="nav">
+
+    <h2>PHV's Protofolio</h2>
+
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Modern Full Stack <br>
+            Developer Portfolio
+        </h1>
+
+        <p>
+            Building responsive websites, Flask applications,
+            and modern full-stack projects with beautiful UI.
+        </p>
+
+        <button class="btn">
+            Explore Projects
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+    <h2>About Me</h2>
+
+    <div class="about-box">
+
+        <p>
+            Hi, I'm Vaishnavi 👋
+            A passionate Python and Full Stack Developer focused on
+            building responsive web applications with Flask,
+            databases, and modern UI design.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section class="section" id="skills">
+
+    <h2>💡 Skills</h2>
+
+    <div class="skills">
+
+        <div>Python</div>
+        <div>Flask</div>
+        <div>HTML</div>
+        <div>CSS</div>
+        <div>JavaScript</div>
+        <div>SQLite</div>
+        <div>GitHub</div>
+        <div>Responsive Design</div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="section" id="projects">
+
+    <h2>📁 Projects</h2>
+
+    <!-- FORM -->
+
+    <form action="/add" method="POST" class="input-box">
+
+        <input 
+            type="text"
+            name="title"
+            placeholder="Project Title"
+            required
+        >
+
+        <input 
+            type="text"
+            name="description"
+            placeholder="Description"
+            required
+        >
+
+        <button type="submit">
+            Add Project
+        </button>
+
+    </form>
+
+    <!-- PROJECT CARDS -->
+
+    <div class="projects">
+
+        {% for project in projects %}
+
+        <div class="project-card">
+
+            <h3>{{ project[1] }}</h3>
+
+            <p>{{ project[2] }}</p>
+
+            <a href="/delete/{{ project[0] }}">
+                Delete
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+    <h2>📞 Contact</h2>
+
+    <div class="about-box">
+
+        <p>Email: phv's@example.com</p>
+
+        <p>GitHub: github.com/yourprofile</p>
+
+        <p>LinkedIn: linkedin.com/in/yourprofile</p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 PHV'S Portfolio | Built with Flask 💙
+        
+    </p>
+
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

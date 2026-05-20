@@ -25,4 +25,4 @@ A modern responsive personal portfolio website built using Flask, HTML, CSS, and
 (Add your GitHub repository link here)
 
 ## Author
-Vaishnavi
+Hema Vaishnavi
